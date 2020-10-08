@@ -1,0 +1,15 @@
+{% extends "layout.html" %}
+
+{% block body %}
+
+    <h1 style = "color:goldenrod">Welcome, {{ request.user.username }}</h1>
+
+    <ul style="list-style-type:none;">
+        <li>Username: {{ request.user.username }}</li>
+        <li>Email: {{ request.user.email }}</li>
+    </ul>
+
+
+    
+    <a href="{% url 'logout' %}">Log Out</a>
+{% endblock %}
