@@ -9,16 +9,16 @@ from au_art.models import Article
 class InitialView(View):
 
     def get(self, *args, **kwargs):
-        # return render(
-        #     self.request,
-        #     'homepage.html',
-        #     {'articles': Article.objects.all()}
-        # )
+        return render(
+            self.request,
+            'homepage.html',
+            {'articles': Article.objects.all()}
+        )
 
-        response = ''
-        for art in Article.objects.all():
-            response += f"{art.id}, {art.title}, {art.author}\n"
-        return HttpResponse(response.encode('utf-8'))
+        # response = ''
+        # for art in Article.objects.all():
+        #     response += f"{art.id}, {art.title}, {art.author}\n"
+        # return HttpResponse(response.encode('utf-8'))
 
 
 
