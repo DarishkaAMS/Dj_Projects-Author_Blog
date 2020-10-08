@@ -1,4 +1,4 @@
-from django.contrib.auth.base_user import AbstractBaseUser
+from django.contrib.auth.base_user import AbstractBaseUser, BaseUserManager
 # from django.contrib.auth.models import UserManager
 from django.contrib.auth.models import UserManager
 from django.db import models
@@ -6,6 +6,23 @@ from django.db import models
 
 class PermissionMixin(object):
     pass
+
+
+class UserManager(BaseUserManager):
+    def create_user(self, email, password=None, **extrafields):
+        user = self.model(email=email)
+        user.set_password(password)
+        user.save()
+        # user = super().create_user(email, password, password, **extrafields)
+        return user
+
+    def create_superuser(self, email, password=None, **extrafields):
+        user = self.create_user(email=email, password=password, sword=None, **extrafields)
+        user.is_active = True
+        user.is_staff = True
+        user.is_superuser = True
+        user.save(using=self._db)
+        return user
 
 
 class USER(AbstractBaseUser, PermissionMixin):
@@ -35,15 +52,4 @@ class USER(AbstractBaseUser, PermissionMixin):
         verbose_name_plural = 'users'
 
 
-class UserManager():
-    def create_user(self, email, password=None, **extrafields):
-        user = super().create_user(email, password, password, **extrafields)
-        return user
 
-    def create_superuser(self, email, sword=None, **extrafields):
-        user = self.create_user(email=email, password=password, sword=None, **extrafields)
-        user.is_active = True
-        user.is_staff = True
-        user.is_superuser = True
-        user.seve(using=self._db)
-        return user
