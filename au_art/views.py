@@ -22,10 +22,9 @@ class InitialView(View):
 
 
 def homepage(request):
-    return render(request, "homepage.html")
-    #               {
-    #     "articles": Article.objects.all()
-    # })
+    return render(request, "homepage.html", {
+        "articles": Article.objects.all()
+    })
 
 # def article(request, user_id):
 #     article = Article.objects.get(pk=user_id)
