@@ -12,7 +12,7 @@ class TestHello(TestCase):
         self.article.save()
 
     def test_hello_view(self):
-        resp = self.client.get(reverse('au_art'))
+        resp = self.client.get(reverse('homepage'))
         self.assertEqual(resp.status_code, 200)
         self.assertIn(self.article.title, resp.content.decode('utf8'))
 
