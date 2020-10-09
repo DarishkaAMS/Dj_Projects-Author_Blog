@@ -1,6 +1,7 @@
-from django.urls import path
+from django.urls import path, include
 from au_art.views import InitialView
+from . import views
 
 urlpatterns = [
-    path('', InitialView.as_view(), name='au_art')
+    path("homepage", views.homepage, name="homepage")
 ]

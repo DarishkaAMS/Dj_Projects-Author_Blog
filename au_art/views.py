@@ -2,7 +2,7 @@ from django.shortcuts import render
 from django.http import HttpResponse
 from django.views import View
 
-from au_art.models import Article
+from au_art.models import Article, Author
 # Create your views here.
 
 
@@ -21,4 +21,16 @@ class InitialView(View):
         # return HttpResponse(response.encode('utf-8'))
 
 
+def homepage(request):
+    return render(request, "homepage.html")
+    #               {
+    #     "articles": Article.objects.all()
+    # })
+
+# def article(request, user_id):
+#     article = Article.objects.get(pk=user_id)
+#     return render(request, "article.html", {
+#         "title": title,
+#         "article": article
+#     })
 

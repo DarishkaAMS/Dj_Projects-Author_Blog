@@ -1,0 +1,15 @@
+{% extends "homepage.html" %}
+
+{% block body%}
+
+    <h1 style = "color:blue">Task {{ author.id }}</h1>
+    <ul style ="list-style-type:none;">
+        <li> Article: {{ article }}</li>
+        <br>
+        <li> Created on: {{ created_on }}</li>
+    </ul>
+
+
+    <a href= "{% url 'index' %}">Go Back to Home Page</a>
+
+{% endblock %}
