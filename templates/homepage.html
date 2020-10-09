@@ -5,19 +5,20 @@
     <meta charset="UTF-8">
     <title>My Blog</title>
 </head>
-<body>
+    <p>
+        Welcome <br> to <br> Our Author Blog!
+    </p>
+<body style=text-align:center>
     {% for art in articles %}
         <p>
             <span style="color: blue">
                 {{art.id}}
             </span>
             {{ art.title}}
+            by
             {{ art.author}}
         </p>
     {% endfor %}
-    <p>
-        Hello World!
-    </p>
 
 </body>
 </html>

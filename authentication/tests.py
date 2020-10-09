@@ -6,10 +6,13 @@ from authentication.models import UserManager, USER
 
 class TestHello(TestCase):
     def setUp(self):
-        email = UserManager(user="d@gmail.com")
-        email.save()
-        password = UserManager(name="d@gmail.com")
-        password.save()
+        user = UserManager.create_user(self, email="d@gmail.com")
+        # user = self.model(email=email)
+        user.set_password(password)
+        user.save()
+        # email.save()
+        # password = UserManager(name="d@gmail.com")
+        # password.save()
 
     def test_hello_view(self):
         resp = self.client.get(reverse('authentication'))
