@@ -6,11 +6,13 @@ from authentication.models import UserManager, USER
 
 class TestHello(TestCase):
     def setUp(self):
-        self.user = UserManager.create_user(self, email="d@gmail.com", password="abc") #!!!!!!!
+        self.email = "d@gmail.com"
+        self.password = "abc"
+        self.user = USER.objects.create_user(email=self.email, password=self.password) # TODO: create variable
         self.user.save()
 
     def test_hello_view(self):
-        resp = self.client.get(reverse('authentication'))
+        resp = self.client.post(reverse('login'), data={'email': self.email, 'password':self.password})
         self.assertEqual(resp.status_code, 200)
         self.assertIn(self.article.title, resp.content.decode('utf8'))
 

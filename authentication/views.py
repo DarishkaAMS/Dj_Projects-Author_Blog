@@ -7,6 +7,7 @@ from django.urls import reverse
 
 # Create your views here.
 
+
 def index(request):
     if not request.user.is_authenticated:
         return HttpResponseRedirect(reverse("login"))
@@ -15,10 +16,10 @@ def index(request):
 
 def login_view(request):
     if request.method == "POST":
-        username = request.POST["username"]
+        email = request.POST["email"]
         password = request.POST["password"]
-        print(username, password)
-        user = authenticate(request, username=username, password=password)
+        # print(username, password)
+        user = authenticate(request, email=email, password=password)
         if user is not None:
             login(request, user)
             return HttpResponseRedirect(reverse("indeX"))
@@ -28,6 +29,8 @@ def login_view(request):
             })
     else:
         return render(request, "login.html")
+
+#TODO redirect to index
 
 def logout_view(request):
     logout(request)
