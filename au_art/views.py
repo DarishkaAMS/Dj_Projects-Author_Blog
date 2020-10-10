@@ -27,17 +27,23 @@ def homepage(request):
     })
 
 
+def user(request):
+    return render(request, "user.html")
+
+
 def article(request, article_id):
     article = Article.objects.get(pk=article_id)
     return render(request, "article.html", {
-        "title": title,
-        "article": article
+        "title": article.title,
+        "article": article.article,
+        "author": article.author,
+        "created_on": article.created_on
     })
 
 
-def join(request, article_id):
-    if request.method == "POST":
-        task = Task.objects.get(pk=task_id)
-        member = TeamMember.objects.get(pk = int(request.POST["member"]))
-        member.task.add(task)
-#         return HttpResponseRedirect(reverse("task", args = (task_id,)))
+# def join(request, article_id):
+#     if request.method == "POST":
+#         art = Article.objects.get(pk=article_id)
+#         title = Article.objects.get(pk=int(request.POST["member"]))
+#         # member.task.add(task)
+#         return HttpResponseRedirect(reverse("article", args = (article_id,)))

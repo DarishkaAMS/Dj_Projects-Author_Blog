@@ -22,5 +22,9 @@
         </p>
     {% endfor %}
 
+    {% block body%}
+    {% endblock %}
+<a href="{% url 'logout' %}">Log Out</a>
+<a href="{% url 'user' %}">Go to User Page</a>
 </body>
 </html>
