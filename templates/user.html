@@ -2,10 +2,10 @@
 
 {% block body %}
 
-    <h1 style = "color:goldenrod">Welcome, {{ request.user.id }}</h1>
+    <h1 style = "color:goldenrod">Welcome</h1>
 
     <ul style="list-style-type:none;">
-        <li>Username: {{ request.user.id }}</li>
+        <li>User ID: {{ request.user.id }}</li>
         <li>Email: {{ request.user.email }}</li>
     </ul>
 
