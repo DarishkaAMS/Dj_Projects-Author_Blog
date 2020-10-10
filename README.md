@@ -1,2 +1,17 @@
 # author_blog
-Python Boot Camp Task 06.10
+Python Boot Camp Task - Week 1
+
+Light version of article blog 
+
+To enter the blog user needs to sign in providing the e-mail and password (created by the Admin via admin site)
+
+After login user may navigate through:
+ - User Page (primary user unformation)
+ - Home Page with the list of articles 
+ - Article page with article itself and its details
+
+Leaving the page user should log out using Log Out button 
+
+2 tests available:
+ - user creatin and authentication 
+ - author and user creation and homepage navigation 

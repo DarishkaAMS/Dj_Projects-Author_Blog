@@ -3,6 +3,7 @@
 {% block body %}
 
     <h1>Welcome</h1>
+    <h3> Get ready </h3>
 
     <ul style="list-style-type:none;">
         <li>User ID: {{ request.user.id }}</li>
@@ -10,8 +11,12 @@
     </ul>
 
 
-    
-    <a href="{% url 'logout' %}">Log Out</a>
-    <a href="{% url 'homepage' %}">Home page</a>
+    <button type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span><a href="{% url 'logout' %}">Log Out</a></span>
+    </button>
+
+    <button type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span><a href="{% url 'homepage' %}">Home Page</a></span>
+    </button>
 
 {% endblock %}

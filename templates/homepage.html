@@ -2,41 +2,68 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8", xmlns="http://www.w3.org/1999/xhtml">
+    
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <title>Author Blog</title>
     <style>
+   <style>
     body {
-    background-color: Lavender!important;
+    background-color: GhostWhite!important;
+    text-align:center;
     }
     h3 {
-    color: #DDA0DD;
+    color: DarkRed;
+    }
+    h1 {
+    color:  DarkRed;
+    }
+    a:link {
+    color: darkred;
+    background-color: transparent;
+    text-decoration: none;
+    }
+
+    a:visited {
+    color: pink;
+    background-color: transparent;
+    text-decoration: none;
+    }
+    a:hover {
+      color: black;
+      background-color: transparent;
+      text-decoration: underline;
     }
     </style>
 </head>
     <h3>
         Welcome <br> to <br> Our Author Blog!
     </h3>
-<body style=text-align:center link="black" vlink="goldenrod" alink="#ff0000">
+
+<body style=text-align:center>
 
     {% for art in articles %}
         <p>
             <a href="{% url 'article' art.id %}">
-            <span style="color: blue">
+            <span style="color: black">
                 {{art.id}}
+                {{ art.title}}
+                by
+                {{ art.author}}
             </span>
-            {{ art.title}}
-            by
-            {{ art.author}}
         </p>
     {% endfor %}
 
     {% block body%}
     {% endblock %}
-    <nav>
-        <a href="{% url 'logout' %}">Log Out</a>
-        <a href="{% url 'user' %}">Go to User Page</a>
-        <a href="{% url 'homepage' %}">Home page</a>
-    </nav>
+    
+    <button type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span><a href="{% url 'logout' %}">Log Out</a></span>
+    </button>
+    
+    <button type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span><a href="{% url 'user' %}">Go to User Page</a></span>
+    </button>
+
 </body>
 </html>

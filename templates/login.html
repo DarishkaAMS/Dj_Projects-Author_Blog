@@ -3,7 +3,7 @@
 {% block body %}
 
     <div>
-        <p><h3>To visit this site <br> You must be of legal authorization in your company</h3></p>
+        <p><h3>To visit this site <br> You must be of legal authorization <br> in your company</h3></p>
     </div> 
     <div>
         <p><h5>Please provide your credentials</h5></p>
@@ -16,7 +16,7 @@
         {% csrf_token %}
         <input type="text" name="username" placeholder="Username" required="required">
         <input type="password" name="password" placeholder="Password" required="required">
-        <input type="submit" value="Login">
+        <input type="submit" value="Login" style="color: darkred;">
     </form>
 {% endblock%}
 

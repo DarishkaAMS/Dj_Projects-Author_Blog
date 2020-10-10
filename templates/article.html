@@ -1,14 +1,18 @@
 {% extends "homepage.html" %}
 
 {% block body%}
-
-<h1>  "{{ title }}" </h1>
-
-    <h3> by {{ author }}</h3>
+<br>
+<h2>  "{{ title }}" </h2>
+    <i style="color: darkred;"> by {{ author }}</i>
     <ul style ="list-style-type:none;">
-        <li> <h4>{{ article }}</h4></li>
+        <br>
+        <li> <h6>{{ article }}</h6></li>
         <br>
         <li> <i> Created on: {{ created_on }} </i> </li>
     </ul>
+
+    <button type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span><a href="{% url 'homepage' %}">Home Page</a></span>
+    </button>
 
 {% endblock %}
