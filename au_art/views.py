@@ -27,17 +27,17 @@ def homepage(request):
     })
 
 
-# def article(request, article_id):
-#     article = Article.objects.get(pk=article_id)
-#     return render(request, "article.html", {
-#         "title": title,
-#         "article": article
-#     })
-#
-#
-# def join(request, article_id):
-#     if request.method == "POST":
-#         task = Task.objects.get(pk=task_id)
-#         member = TeamMember.objects.get(pk = int(request.POST["member"]))
-#         member.task.add(task)
+def article(request, article_id):
+    article = Article.objects.get(pk=article_id)
+    return render(request, "article.html", {
+        "title": title,
+        "article": article
+    })
+
+
+def join(request, article_id):
+    if request.method == "POST":
+        task = Task.objects.get(pk=task_id)
+        member = TeamMember.objects.get(pk = int(request.POST["member"]))
+        member.task.add(task)
 #         return HttpResponseRedirect(reverse("task", args = (task_id,)))

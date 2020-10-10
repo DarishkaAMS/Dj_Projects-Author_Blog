@@ -12,6 +12,7 @@
 
     {% for art in articles %}
         <p>
+            <a href="{% url 'article' art.id %}">
             <span style="color: blue">
                 {{art.id}}
             </span>
