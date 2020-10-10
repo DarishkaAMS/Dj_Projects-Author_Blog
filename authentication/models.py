@@ -50,6 +50,3 @@ class USER(AbstractBaseUser, PermissionMixin):
         db_table = 'users'
         verbose_name = 'user'
         verbose_name_plural = 'users'
-
-
-
