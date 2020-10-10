@@ -2,15 +2,13 @@
 
 {% block body%}
 
-<h2>  "{{ title }}" </h2>
+<h1>  "{{ title }}" </h1>
 
-    <h1 style = "color:blue">Created by {{ author }}</h1>
+    <h3> by {{ author }}</h3>
     <ul style ="list-style-type:none;">
-        <li> Article: {{ article }}</li>
+        <li> <h4>{{ article }}</h4></li>
         <br>
-        <li> Created on: {{ created_on }}</li>
+        <li> <i> Created on: {{ created_on }} </i> </li>
     </ul>
-
-<a href="{% url 'homepage' %}">Home page</a>
 
 {% endblock %}

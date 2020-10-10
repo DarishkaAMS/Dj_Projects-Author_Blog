@@ -10,7 +10,7 @@ class Author(models.Model):
         db_table = "authors"
 
     def __str__(self):
-        return f"{self.id}: {self.name}"
+        return f"{self.name}"
 
 
 class Article(models.Model):
@@ -23,4 +23,4 @@ class Article(models.Model):
         db_table = "articles"
 
     def __str__(self):
-        return f"{self.id}: {self.author} - {self.title[0:25]}. created on {self.created_on}"
+        return f"{self.author} - {self.title[0:25]}. created on {self.created_on}"

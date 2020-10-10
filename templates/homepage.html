@@ -2,12 +2,21 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8", xmlns="http://www.w3.org/1999/xhtml">
-    <meta charset="UTF-8">
-    <title>My Blog</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <title>Author Blog</title>
+    <style>
+    body {
+    background-color: Lavender!important;
+    }
+    h3 {
+    color: #DDA0DD;
+    }
+    </style>
 </head>
-    <p>
+    <h3>
         Welcome <br> to <br> Our Author Blog!
-    </p>
+    </h3>
 <body style=text-align:center link="black" vlink="goldenrod" alink="#ff0000">
 
     {% for art in articles %}
@@ -24,7 +33,10 @@
 
     {% block body%}
     {% endblock %}
-<a href="{% url 'logout' %}">Log Out</a>
-<a href="{% url 'user' %}">Go to User Page</a>
+    <nav>
+        <a href="{% url 'logout' %}">Log Out</a>
+        <a href="{% url 'user' %}">Go to User Page</a>
+        <a href="{% url 'homepage' %}">Home page</a>
+    </nav>
 </body>
 </html>
