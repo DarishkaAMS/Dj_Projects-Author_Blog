@@ -42,7 +42,7 @@
 
 <body style=text-align:center>
 
-    {% for art in articles %}
+    {% for art in articles reversed %}
         <p>
             <a href="{% url 'article' art.id %}">
             <span style="color: black">
