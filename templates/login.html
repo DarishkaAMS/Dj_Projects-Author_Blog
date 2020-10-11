@@ -3,18 +3,18 @@
 {% block body %}
 
     <div>
-        <p><h3>To visit this site <br> You must be of legal authorization <br> in your company</h3></p>
-    </div> 
+        <p><h3>To visit this site </h3></p>
+    </div>
     <div>
         <p><h5>Please provide your credentials</h5></p>
-    </div> 
+    </div>
 {% if message %}
         <div>{{ message }}</div>
     {% endif %}
 
     <form action="{% url 'login' %}" method="post">
         {% csrf_token %}
-        <input type="text" name="username" placeholder="Username" required="required">
+        <input type="text" name="username" placeholder="Email" required="required">
         <input type="password" name="password" placeholder="Password" required="required">
         <input type="submit" value="Login" style="color: darkred;">
     </form>

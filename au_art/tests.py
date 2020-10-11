@@ -4,14 +4,14 @@ from django.urls import reverse
 from au_art.models import Author, Article
 
 
-class TestHello(TestCase):
+class TestAuArt(TestCase):
     def setUp(self):
         author = Author(name="Anonymous")
         author.save()
         self.article = Article(title="New Article", article="Such a wonderful day", author=author)
         self.article.save()
 
-    def test_hello_view(self):
+    def test_au_art_view(self):
         resp = self.client.get(reverse('homepage'))
         self.assertEqual(resp.status_code, 200)
         self.assertIn(self.article.title, resp.content.decode('utf8'))
